@@ -4,11 +4,11 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.7
-      name: flasky
-      ports:
+       name: flasky
+       ports:
         - 3000:3000
-      -image: circleci/nginx:1.17.10
-      name: nginx
+      - image: circleci/nginx:1.17.10
+        name: nginx
       steps:
       - checkout
       - run: |
