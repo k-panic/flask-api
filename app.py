@@ -9,6 +9,10 @@ class Test(Resource):
     def get(self):
         return {'test': 'OKAY'}, 200
 
+class HelloWorld(Resource):
+    def get(self):
+        return {'message': "Hello World"}
+
 api.add_resource(Test,'/test')
 
 
