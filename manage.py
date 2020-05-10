@@ -1,13 +1,17 @@
-# import requests
+import requests
+import subprocess
 
-# url = "http://localhost:3000/test"
+p = subprocess.run("python app.py", capture_output=True)
+assert p.returncode == 0
 
-# r = requests.get(url=url)
+print('the app is running successfully, trying the test request ...')
 
-# responsecode = r.status_code
-# data = r.json()
+url = "http://localhost:3000/test"
 
-# assert r.status_code == 20
-# assert data['test'] == 'OKAY'
+r = requests.get(url=url)
 
-assert 2+3 == 5
+responsecode = r.status_code
+data = r.json()
+
+assert r.status_code == 200
+assert data['test'] == 'OKAY'
