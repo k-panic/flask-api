@@ -7,5 +7,8 @@ jobs:
         command: docker login -u tidiBarry19 --password-stdin && docker network create flasky-network && docker-compose up
     steps:
       - checkout
+      - run: |
+        docker network create flasky-network
+        docker-compose up
       - run: python manage.py
       - run: docker-compose down
