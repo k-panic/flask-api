@@ -9,6 +9,6 @@ jobs:
       # - run: sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
       # - run: sudo chmod +x /usr/local/bin/docker-compose
       - run: docker network create flasky-network
-      - run: docker-compose up
+      - run: docker-compose up -d
       - run: python manage.py
       - run: docker-compose down
