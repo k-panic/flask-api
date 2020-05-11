@@ -2,12 +2,14 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: circleci/python:3.7
-        name: flasky
-      - image: circleci/nginx:1.17.10
-        name: nginx
     steps:
     - checkout
-    - run: docker run flasky
-    - run: docker run flasky
+    - run: apt-get in
+    - run: docker build -t flasky-app .
+    # - run: docker run flasky
+    docker:
+      - image: flasky-app
+    steps:
+      - checkout
+      - run: docker-compose up
+      - run: python manage.py
