@@ -2,7 +2,8 @@ version: 2.1
 
 jobs:
   build:
-    machine: true
+    docker:
+      image: circleci/python:3
     steps:
       - checkout
       # - run: sudo apt-get install docker -y
