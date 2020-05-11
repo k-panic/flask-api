@@ -10,6 +10,6 @@ jobs:
       # - run: sudo chmod +x /usr/local/bin/docker-compose
       - run: docker network create flasky-network
       - run: docker-compose up -d
-      - run: pip freeze -r requirements.txt
+      - run: pip install -r requirements.txt
       - run: python manage.py
       - run: docker-compose down
