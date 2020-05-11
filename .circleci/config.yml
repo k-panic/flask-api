@@ -9,9 +9,6 @@ jobs:
           - 3000:3000
       - image: circleci/nginx:1.17.10
         name: nginx
-      steps:
-      - checkout
-      - run: |
-        docker run flasky
-      # - run: pip install -r requirements.txt
-      # - run: python manage.py
+    steps:
+    - checkout
+    - run: docker run flasky
