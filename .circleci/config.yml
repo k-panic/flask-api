@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: flasky-app
-        command: docker network create flasky-network && docker-compose up
+        command: docker login -u tidiBarry19 --password-stdin && docker network create flasky-network && docker-compose up
     steps:
       - checkout
       - run: python manage.py
