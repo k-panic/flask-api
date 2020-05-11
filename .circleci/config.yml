@@ -2,9 +2,6 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: flasky-app
-        command: docker login -u tidiBarry19 --password-stdin && docker network create flasky-network && docker-compose up
     steps:
       - checkout
       - run: |
