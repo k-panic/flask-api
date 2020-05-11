@@ -4,8 +4,7 @@ jobs:
   build:
     steps:
       - checkout
-      - run: |
-        docker network create flasky-network
-        docker-compose up
+      - run: docker network create flasky-network
+      - run: docker-compose up
       - run: python manage.py
       - run: docker-compose down
