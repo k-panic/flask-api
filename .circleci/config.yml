@@ -3,9 +3,6 @@ version: 2.1
 jobs:
   build:
     machine: true
-    
-    docker:
-      - image: circleci/python:3
     steps:
       - checkout
       # - run: sudo apt-get install docker -y
@@ -13,6 +10,6 @@ jobs:
       # - run: sudo chmod +x /usr/local/bin/docker-compose
       - run: docker network create flasky-network
       - run: docker-compose up -d
-      - run: pip3 install --upgrade pip3 && pip install -r requirements.txt
-      - run: python3 manage.py
+      - run: pip install --upgrade pip && pip install requests
+      - run: python manage.py
       - run: docker-compose down
